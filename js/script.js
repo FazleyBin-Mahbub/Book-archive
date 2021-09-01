@@ -1,7 +1,6 @@
 const searchBooks = () => {
   const searchField = document.getElementById("search-field");
   const searchText = searchField.value;
-  console.log(searchText);
 
   // clear search
 
@@ -15,7 +14,6 @@ const searchBooks = () => {
 };
 
 const displaySearchResults = (books) => {
-  //   console.log(books);
   const searchResults = document.getElementById("search-results");
   books.forEach((book) => {
     const div = document.createElement("div");
