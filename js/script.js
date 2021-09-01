@@ -21,7 +21,7 @@ const displaySearchResults = (books) => {
     div.innerHTML = `
     <div class="card h-100">
       
-          <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top">
+        <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top">
           <div class="card-body">
             <h1 class="card-title"> ${book.title} </h1>
            <p> <strong> Author: </strong> ${book.author_name} </p>
