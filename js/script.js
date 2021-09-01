@@ -25,9 +25,11 @@ const displaySearchResults = (books) => {
     emptyMessage.innerText = "No Data Found 🥺 Please Input Valid Something 😊";
   } else {
     emptyMessage.textContent = "";
+
     books.forEach((book) => {
       const div = document.createElement("div");
       div.classList.add("col");
+
       div.innerHTML = `
         <div class="card h-100">
         
