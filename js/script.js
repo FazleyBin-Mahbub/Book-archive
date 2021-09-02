@@ -21,7 +21,8 @@ const searchBooks = () => {
 const displaySearchResults = (books) => {
   const searchResults = document.getElementById("search-results");
   const resultCounter = document.getElementById("result-count");
-
+ 
+  // number of data found 
   const numOfDataFound = books.numFound;
   searchResults.textContent = "";
   const emptyMessage = document.getElementById("empty-message");
@@ -37,16 +38,15 @@ const displaySearchResults = (books) => {
       div.classList.add("col");
 
       div.innerHTML = `
-        <div class="card h-100">
-         
-            <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top">
-               <div class="card-body">
-            <h1 class="card-title"> ${book.title} </h1>
-               <p> <strong> Author: </strong> ${book.author_name}</p>
-               <p> <strong> First Publish: </strong> ${book.first_publish_year} </p>
-               <p> <strong> Publisher: </strong> ${book.publisher} </p>
-                </div>
-            </div>
+      <div class="card h-100">
+        <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top">
+      <div class="card-body">
+        <h1 class="card-title">${book.title}</h1>
+        <p><strong> Author: </strong> ${book.author_name}</p>
+        <p><strong> First Publish: </strong> ${book.first_publish_year}</p>
+        <p><strong> Publisher: </strong> ${book.publisher}</p>
+      </div>
+    </div>
         `;
       searchResults.appendChild(div);
     });
