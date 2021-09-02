@@ -21,7 +21,8 @@ const searchBooks = () => {
 const displaySearchResults = (books) => {
   const searchResults = document.getElementById("search-results");
   const resultCounter = document.getElementById("result-count");
-  const numOfDataFoud = books.numFound;
+
+  const numOfDataFound = books.numFound;
   searchResults.textContent = "";
   const emptyMessage = document.getElementById("empty-message");
 
@@ -30,7 +31,7 @@ const displaySearchResults = (books) => {
     resultCounter.innerText = 0;
   } else {
     emptyMessage.textContent = "";
-    resultCounter.innerText = numOfDataFoud;
+    resultCounter.innerText = numOfDataFound;
     books.docs.forEach((book) => {
       const div = document.createElement("div");
       div.classList.add("col");
