@@ -1,19 +1,23 @@
 // find books
-const searchBooks = () => {
+const searchBooks = async () => {
   const searchField = document.getElementById("search-field");
   const searchText = searchField.value;
 
   // clear search
 
   searchField.value = "";
+  // server error display none
+
   if (searchText === "") {
+    // if no data input
     alert("No data entry 😧 Please Input Something 😊");
   } else {
+    // load data
     const url = `https://openlibrary.org/search.json?q=${searchText}`;
 
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => displaySearchResults(data));
+    const response = await fetch(url);
+    const loadData = await response.json();
+    displaySearchResults(loadData);
   }
 };
 
@@ -21,8 +25,8 @@ const searchBooks = () => {
 const displaySearchResults = (books) => {
   const searchResults = document.getElementById("search-results");
   const resultCounter = document.getElementById("result-count");
- 
-  // number of data found 
+
+  // number of data found
   const numOfDataFound = books.numFound;
   searchResults.textContent = "";
   const emptyMessage = document.getElementById("empty-message");
